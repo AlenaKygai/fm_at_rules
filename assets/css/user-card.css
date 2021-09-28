@@ -1,76 +1,125 @@
 :root{
-  --text-color: #a3a3a3;
-  --accent-color:#fede48;
-  font-size: 16px;
+  --text-color-main: #2f3634;
+  --text-color-second: #c4c7c7;
+  --accent-color:#fad84c;
+  font-size: 14px;
+  font-family: sans-serif;
+  font-weight: 200;
 }
-.userCard{
-  min-height: 40vh;
-  max-width: 600px;
-  width: 90%;
-  margin: 0 auto;
+body{
   display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.userCard, .cloneFirst, .cloneSecond{
+  display: flex;
+  justify-content: center;
   position: relative;
+  width: 100%;
+  max-width: 500px;
+  min-height: 40vh;
   border-radius: 5px;
   box-shadow: 2px 8px 14px 8px rgba(34, 60, 80, 0.2);
-  /* border: 1px solid grey; */
-  font-family: Arial, sans-serif;
-  font-size: 0.9rem;
+  background-color: #fff;
+}
+.cloneFirst{
+  width: 95%;
+  position: absolute;
+  top:-10px;
+  z-index: -1;
+}
+.cloneSecond{
+  width: 90%;
+  position: absolute;
+  top:-20px;
+  z-index: -2;
 }
 .userCard::after{
   content: '+';
+  width: 60px;
+  height: 60px;
   display: inline-block;
-  width: 50px;
-  height: 50px;
+  position: absolute;
+  text-align: center;
+  top: calc(50% - 20px);
+  right:-30px;
+  opacity: 0.9;
   border-radius: 50%;
   background-color: var(--accent-color);
-  text-align: center;
+  font-size: 2rem;
   line-height: 50px;
-  font-size: 1.5rem;
-  position: absolute;
-  right: -25px;
-  top: calc(50% - 25px);
-}
-.imageWrapper{
-  width: 40%;
 }
 .userImage{
+  width: 40%;
+}
+.userPhoto{
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   border-radius: 5px 0 0 5px;
 }
-.userInfo{
-  margin: auto;
-  margin-left: 10%;
-  color: var(--text-color);
+.userLabel{
+  position: absolute;
+  top: 20px;
+  right:20px;
+  padding: 7px; 
+  border-radius: 20px;
+  background-color: var(--text-color-second);
+  font-size: 0.6rem;
+  color: white;
 }
-.userPersonalInfo{
-  margin-bottom: 20%;
+.userInfo{
+  margin: 50px 40px 40px 50px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 }
 .userName{
-  color: black;
-  font-size: 1.5rem;
+  padding-bottom: 10px;
+  font-size: 1.2rem;
+  font-weight: 400;
 }
-.userStatusConteiner{
+.userLink{
+  color: var(--text-color-second);
+}
+.statusContainer{
   display: flex;
+  justify-content: space-around;
 }
 .userStatus{
-  display: flex;
-  flex-direction: column;
+  color: var(--text-color-second);
+}
+.userStatus span:first-child{
+  display: block;
+  margin-bottom: 10px;
+  margin-right: 50px;
 }
 
 @media (max-width:550px) {
   .userCard{
     flex-direction: column;
-  }
-  .imageWrapper{
-    width: 100%;
-  }
-  .userInfo{
-    margin: 0;
-    padding-left: 1em;
+    max-width: 300px;
+    min-height: 20vh;
   }
   .userCard::after{
     display: none;
+  }
+  .cloneFirst, .cloneSecond{
+    display: none;
+  }
+  .userLabel{
+    top: calc(50% + 10px);
+    right:10px;
+  }
+  .userImage{
+    width: 100%;
+  }
+  .userPhoto{
+    border-radius: 5px 5px 0 0;
+  }
+  .userLink{
+    margin-bottom: 10px;
   }
 }
