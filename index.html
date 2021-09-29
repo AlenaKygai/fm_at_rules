@@ -9,31 +9,17 @@
   <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-  <section class="user-list">
-    <arcticle class="userCard">
-      <div class="cloneFirst"></div>
-      <div class="cloneSecond"></div>
-      <div class="userImage">
-        <img src="./assets/images/user-photo.jpeg" alt="" class="userPhoto">
-      </div>
-      <span class="userLabel">PRO</span>
-      <div class="userInfo">
-        <div class="personalInfo">
-          <h2 class="userName">Jordan Tucker</h2>
-          <h3 class="userLink"><a href="">@jordantucker</a></h3>
-        </div>
-        <div class="statusContainer">
-          <div class="userStatus">
-            <span>shots</span>
-            <span>250</span>
-          </div>
-          <div class="userStatus">
-            <span>followers</span>
-            <span>1689</span>
-          </div>
-        </div>
-      </div>
-    </arcticle>
-  </section>
+  <picture>
+    <source srcset="./assets/images/sea_800.jpg" media="(max-width:800px)">
+    <source srcset="./assets/images/sea.jpeg" media="(min-width:801px)">
+    <source srcset="./assets/images/sea_800.webp" 
+          media="(max-width:800px)"
+          type="image/webp">
+    <source srcset="./assets/images/user-photo.jpeg" 
+          media="(min-width:801px) and (min-resolution:300dpi)"
+          type="image/jpeg">
+    <img src="./assets/images/sea_800.jpg" alt="" class="image">
+  </picture>
+  
 </body>
 </html>
